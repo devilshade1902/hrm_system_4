@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wnro$$8fzc=qo$irxm-3q)(4fe-l6&$g$#^oq#u1ko+itx5u)0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hrm-system-2.onrender.com']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'HRM_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'hrm_system_3zi0',
-        'USER':'hrm_system_3zi0_user',
-        'PASSWORD':'p3as1WkyhlnMwx17yM0QlNjgvBaMXLbO',
-        'HOST':'dpg-cv9hu8an91rc73ejlqt0-a',
+        'NAME':'hrm_system_gkpj',
+        'USER':'hrm_system_gkpj_user',
+        'PASSWORD':'9mon5UFllKdk0ZDcp7lZsMc0TdNifoAx',
+        'HOST':'dpg-cv9i0cjqf0us73agho2g-a',
         'PORT':'5432',
     }
 }
