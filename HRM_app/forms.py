@@ -21,6 +21,11 @@ class EmployeeForm(forms.ModelForm):
         required=False,
         label="Set Password (leave blank to keep unchanged)"
     )
+    date_of_joining = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date'}),
+        label="Date of Joining",
+        required=False  # Match the model's null=True, blank=True
+    )
 
     class Meta:
         model = User

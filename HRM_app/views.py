@@ -121,7 +121,7 @@ def permission_denied(request):
 @login_required
 @user_passes_test(is_hr_or_admin , login_url='permission_denied')
 def dashboard(request):
-    employees = User.objects.all()
+    employees = User.objects.filter(is_superuser=False)
     return render(request, 'dashboard.html', {'employees': employees})
 
 @login_required
