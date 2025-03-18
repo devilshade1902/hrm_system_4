@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wnro$$8fzc=qo$irxm-3q)(4fe-l6&$g$#^oq#u1ko+itx5u)0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['hrm-system-2.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'HRM_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'hrm_system_syzz',
-        'USER':'hrm_system_syzz_user',
-        'PASSWORD':'cvaPCLJYRQHxzYqXmzzNZ4dY7JipKMGD',
-        'HOST':'dpg-cv9ig49c1ekc73e5cdv0-a',
+        'NAME':'hrm_system_5pir_user',
+        'USER':'hrm_system_5pir_user',
+        'PASSWORD':'lwkCDwynsTGF18YN42k0mNS6GAOADCaz',
+        'HOST':'dpg-cvcvjhin91rc73dbmkmg-a',
         'PORT':'5432',
     }
 }
@@ -115,6 +115,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'devilshade1902@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'uzeo wwus ifcr nydt'  # Use an App Password (see below)
+DEFAULT_FROM_EMAIL = 'HRM System <devilshade1902@gmail.com>'
 
 
 # Static files (CSS, JavaScript, Images)

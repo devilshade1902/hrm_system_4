@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Create Task</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_task_title" class="form-label">Task Title</label>
+            {{ form.task_title }}
+        </div>
+        <div class="mb-3">
+            <label for="id_task_description" class="form-label">Description</label>
+            {{ form.task_description }}
+        </div>
+        <div class="mb-3">
+            <label for="id_task_priority" class="form-label">Task Priority</label>
+            {{ form.task_priority }}
+        </div>
+        <div class="mb-3">
+            <label for="id_task_type" class="form-label">Task Type</label>
+            {{ form.task_type }}
+        </div>
+        <div class="mb-3">
+            <label for="id_assigned_to" class="form-label">Assigned To</label>
+            {{ form.assigned_to }}
+            <small id="assigned_to_help" class="form-text text-muted">Hold Ctrl/Cmd to select multiple employees (for Team tasks).</small>
+        </div>
+        <div class="mb-3">
+            <label for="id_start_date" class="form-label">Start Date</label>
+            {{ form.start_date }}
+        </div>
+        <div class="mb-3">
+            <label for="id_end_date" class="form-label">End Date</label>
+            {{ form.end_date }}
+        </div>
+        <button type="submit" class="btn btn-primary">Create and Assign Task</button>
+        <a href="{% url 'tasks_dashboard' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const taskTypeSelect = document.getElementById('id_task_type');
+        const assignedToSelect = document.getElementById('id_assigned_to');
+        const helpText = document.getElementById('assigned_to_help');
+
+        function updateAssignedTo() {
+            if (taskTypeSelect.value === 'Individual') {
+                assignedToSelect.removeAttribute('multiple');
+                helpText.style.display = 'none';
+            } else if (taskTypeSelect.value === 'Team') {
+                assignedToSelect.setAttribute('multiple', 'multiple');
+                helpText.style.display = 'block';
+            }
+        }
+
+        // Initial state
+        updateAssignedTo();
+
+        // Update on change
+        taskTypeSelect.addEventListener('change', updateAssignedTo);
+    });
+</script>
+{% endblock %}
