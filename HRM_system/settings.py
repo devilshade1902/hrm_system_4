@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wnro$$8fzc=qo$irxm-3q)(4fe-l6&$g$#^oq#u1ko+itx5u)0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://hrm-system-4.onrender.com']
+ALLOWED_HOSTS = ['hrm-system-4.onrender.com']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'HRM_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'hrm_system_bdit',
-        'USER':'hrm_system_bdit_user',
-        'PASSWORD':'l8chWFHrHWaDZNWZVAPoko2lN4NDxvdL',
-        'HOST':'dpg-cvcvs756l47c73ehh7gg-a',
+        'NAME':'hrm_system_nbzv',
+        'USER':'hrm_system_nbzv_user',
+        'PASSWORD':'46Hz1UgW5UnjMXVHTRixACzL1M0wp4BQ',
+        'HOST':'dpg-cvd0sbbv2p9s73cahub0-a',
         'PORT':'5432',
     }
 }
